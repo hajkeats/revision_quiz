@@ -1,0 +1,27 @@
+{
+  "Question Words": {
+    "What": "Apa",
+    "Where": "Mana",
+    "When": "Bila",
+    "Why": "Kenapa",
+    "How": "Macam mana",
+    "Who": "Siapa"
+  },
+  "Greetings": {
+    "How are you?": "Apa khabar?",
+    "Good, healthy": "Baik, sihat",
+    "Good morning": "Selamat pagi",
+    "Good afternoon": "Selamat tengah hari",
+    "Good evening": "Selamat petang",
+    "Good night": "Selamat malam",
+    "Welcome": "Selamat datang"
+  },
+  "Celebrations": {
+    "Happy Eid!": "Eid mubarak",
+    "Happy Raya": "Selamat hari raya",
+    "Happy birthday": "Selamat hari jadi",
+    "Someones getting married": "Orang kahwin",
+    "Congrats": "Tahniah",
+    "Please, eat!": "Jemput makan"
+  }
+}
