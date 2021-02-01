@@ -13,5 +13,5 @@ Within a `quiz.json` file, create a structure like:
     }
 }
 ```
-An example file exists as `quiz.json.demo`.    
+> An example file exists as `quiz.json.demo`.    
 Then run `./quiz.py` and quiz yourself!
