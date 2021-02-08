@@ -1,7 +1,7 @@
 # revision_quiz
 Quiz yourself on your revision topic using the terminal!
 
-Within a `quiz.json` file, create a structure like:
+Within a `<name>.json` file, create a structure like:
 ```json
     {
         "Topic 1": {
@@ -13,6 +13,6 @@ Within a `quiz.json` file, create a structure like:
     }
 }
 ```
-> An example file exists as `quiz.json.demo`.    
+> An example file exists as `malay.json`.    
 
-Then run `./quiz.py` and quiz yourself!
+Then run `./quiz.py <name>.json` and quiz yourself!
