@@ -17,5 +17,5 @@ Within a `<name>.json` file, create a structure like:
 Then run `./quiz.py <name>.json` and quiz yourself!
 
 > Optional Args:
-    * Use '--multiple_choice' to create a multiple choice quiz 
-    * Use '--reversed' to quiz yourself on the answers rather than the questions
+>    * Use '--multiple_choice' to create a multiple choice quiz
+>    * Use '--reversed' to quiz yourself on the answers rather than the questions
