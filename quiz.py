@@ -13,10 +13,12 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("json", help="The json quiz file")
     parser.add_argument("--multiple_choice", action="store_true", help="Start a multiple choice quiz")
+    parser.add_argument("--reversed", action="store_true",
+                        help="Treat the values as questions and keys as answers")
     return parser.parse_args()
 
 
-def main(file_name, multiple_choice=False):
+def main(file_name, multiple_choice=False, reversed=False):
     """
     Quiz yourself on your quiz.json
     """
@@ -44,9 +46,19 @@ def main(file_name, multiple_choice=False):
         correct = 0
         total = 0
 
-        if multiple_choice:
-            for question, answer in questions:
-                answer_pool = [a for q, a in questions if a != answer]
+        for key, value in questions:
+            if reversed:
+                question = value
+                answer = key
+            else:
+                question = key
+                answer = value
+
+            if multiple_choice:
+                if reversed:
+                    answer_pool = [a for a, q in questions if a != answer]
+                else:
+                    answer_pool = [a for q, a in questions if a != answer]
                 choices = random.sample(answer_pool, 3)
                 choices.append(answer)
                 random.shuffle(choices)
@@ -73,8 +85,7 @@ def main(file_name, multiple_choice=False):
                     print(f'\n{INCORRECT_COLOUR}Incorrect, the correct answer was {correct_letter}\n')
                 total += 1
                 print(f'{STANDARD_COLOUR}Your result {correct}/{total}\n')
-        else:
-            for question, answer in questions:
+            else:
                 attempt = input(f'{QUESTION_COLOUR}{question}\n\n')
                 if attempt.lower() == "exit":
                     print(f'{STANDARD_COLOUR}Your result {correct}/{total}\n')
@@ -85,7 +96,7 @@ def main(file_name, multiple_choice=False):
                 else:
                     print(f'\n{INCORRECT_COLOUR}Incorrect, the correct answer was {answer}\n')
                 total += 1
-            print(f'{STANDARD_COLOUR}Your result {correct}/{total}\n')
+                print(f'{STANDARD_COLOUR}Your result {correct}/{total}\n')
 
 
 if __name__ == '__main__':
@@ -103,10 +114,12 @@ if __name__ == '__main__':
     
     Then run ./quiz.py <name>.json and quiz yourself
     
-    Optional: Use '--multiple_choice' to create a multiple choice quiz
+    Optional Args:
+        Use '--multiple_choice' to create a multiple choice quiz
+        Use '--reversed' to quiz yourself on the answers rather than the questions
     """
     args = parse_args()
     try:
-        main(args.json, args.multiple_choice)
+        main(args.json, args.multiple_choice, args.reversed)
     except IndexError:
         print('A json file is required as an argument')
