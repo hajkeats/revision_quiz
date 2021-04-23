@@ -11,8 +11,9 @@ Within a `<name>.json` file, create a structure like:
         "Topic 2" : {
 	    # ...
     }
-}
 ```
-> An example file exists as `malay.json`.    
+> Example quiz files exists in `malay.json` and `aws.json`.    
 
 Then run `./quiz.py <name>.json` and quiz yourself!
+
+> Optionally, run with --multiple_choice to create a multiple choice quiz.
