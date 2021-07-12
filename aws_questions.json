@@ -135,6 +135,6 @@
         "You need to run a number of Amazon EC2 Instances that are physically isolated at the host hardware level from instances that belong to any other\nAWS account. How can you meet this requirement in a cost effective way?": "Use EC2 Dedicated Instances",
         "Which DynamoDB feature can be used to reduce the latency of requests to a database from milliseconds to microseconds?": "DAX",
         "In order to send alerts based on Amazon CloudWatch alarms, you are required to choose the service that a user would use.\nWhich of the following service would you choose?": "Amazon SNS",
-        "Which of the following is NOT a benefit of using Amazon VPC?": "Amazon VPC allows you to control user interactions with various AWS resources",
+        "Which of the following is NOT a benefit of using Amazon VPC?": "Amazon VPC allows you to control user interactions with various AWS resources"
     }
 }
